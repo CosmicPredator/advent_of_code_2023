@@ -1,7 +1,6 @@
 use std::fs::read_to_string;
 
 fn day_1_part_2() {
-
     let mut sum = 0;
     if let Ok(lines) = read_to_string(r"E:\rustApps\advent_of_code\src\cases.txt") {
         for ln in lines.lines() {
