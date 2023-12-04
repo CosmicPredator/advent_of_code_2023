@@ -1,6 +1,8 @@
 use std::fs::read_to_string;
 
 fn day_1_part_1() {
+
+    // Initialize the result sum to 0
     let mut sum = 0;
     if let Ok(lines) = read_to_string(r"E:\rustApps\advent_of_code\src\cases.txt") {
         for ln in lines.lines() {
@@ -11,9 +13,13 @@ fn day_1_part_1() {
 }
 
 fn get_calibration(input: &str) -> i32 {
+
     let mut first_num: i32 = 0;
     let mut second_num: i32 = 0;
 
+    // This code catches the first parseable i32 (can be checked with char.is_numeric() too.)
+    // Then it stores that i32 to first_num
+    // Then breaks the loop.
     for c in input.chars() {
         if let Ok(value) = (c.to_string()).parse::<i32>() {
             first_num = value;
@@ -21,6 +27,8 @@ fn get_calibration(input: &str) -> i32 {
         }
     }
     
+    // Same iteration check as before, but with reversed list.
+    // So that we can get the last i32 parseable char
     for c in input.chars().rev() {
         if let Ok(value) = (c.to_string()).parse::<i32>() {
             second_num = value;
@@ -28,5 +36,6 @@ fn get_calibration(input: &str) -> i32 {
         }
     }
 
+    // Interoplating both first and last num and converting it to i32
     format!("{:?}{:?}", first_num, second_num).parse::<i32>().unwrap()
 }
