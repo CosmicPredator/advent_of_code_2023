@@ -17,13 +17,13 @@ pub fn day_2_part_1() {
     // Box<T> used if in case the stack gets overflowed
     let mut game_coll: Box<HashMap<u32, Game>> = Box::new(HashMap::new());
 
-    if let Ok(lines) = read_to_string(r"E:\rustApps\advent_of_code\src\cases_day2.txt") {
+    if let Ok(lines) = read_to_string(r"<Your input file in .txt format>") {
         for (e, l) in lines.lines().enumerate() {
             game_coll.insert((e as u32) + 1, str_to_game(l));
         }
     }
 
-    // Initializing empty i32 for reulting sum
+    // Initializing empty i32 for resulting sum
     let mut sum: u32 = 0;
 
     // Defined the given basket bounds
@@ -35,15 +35,11 @@ pub fn day_2_part_1() {
 
     for (key, value) in game_coll.iter() {
 
-        if key == &1 {
-            println!("{:?}", value);
-        }
-
         let mut eligible: bool = true;
 
         // Checking whether any member of the struct is greater than possible value
         // That's what we want to check too 😁
-        // If an iteration is checked completly, then the eligible flag remains to true
+        // If an iteration is checked completely, then the eligible flag remains to true
         // If not, then it's changed to false
         for i in value {
             if i.blue > possible_values.blue
@@ -57,7 +53,6 @@ pub fn day_2_part_1() {
 
         // If eligible flag is still true, then add it's key (game numeber) to sum;
         if eligible {
-            println!("{} {:?}", key, value);
             sum += key;
         }
     }

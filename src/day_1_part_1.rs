@@ -4,7 +4,7 @@ fn day_1_part_1() {
 
     // Initialize the result sum to 0
     let mut sum = 0;
-    if let Ok(lines) = read_to_string(r"E:\rustApps\advent_of_code\src\cases.txt") {
+    if let Ok(lines) = read_to_string(r"<Your input file in .txt format>") {
         for ln in lines.lines() {
             sum += get_calibration(ln);
         }
