@@ -2,7 +2,5 @@
 /src/main.rs
 cargo.lock
 cargo.toml
-src/cases.txt
-src/cases_day2.txt
-src/cases_day3.txt
+src/*.txt
 .vscode/*
