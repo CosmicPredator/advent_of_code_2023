@@ -2,5 +2,5 @@
 /src/main.rs
 cargo.lock
 cargo.toml
-src/*.txt
 .vscode/*
+src/*.txt
