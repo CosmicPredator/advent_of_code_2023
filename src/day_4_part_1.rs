@@ -1,6 +1,6 @@
 fn day_4_part_1() {
     let file = 
-        std::fs::read_to_string(r"E:\rustApps\advent_of_code\src\cases_day4.txt").unwrap();
+        std::fs::read_to_string(r"<Your input file in .txt format>").unwrap();
     println!("{:?}", file.lines().map(|line| {
         line.split(": ")
             .collect::<Vec<_>>()[1]
