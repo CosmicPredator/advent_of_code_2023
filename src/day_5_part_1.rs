@@ -34,9 +34,6 @@ fn day_5_part_1() {
 // using traditional loops and ".contains()" approach
 // took me like 30mins to finish the execution
 // This is the optimized way and the execution done in 3.5ms
-// This uses the concept of scaling. it finds the difference between
-// the source_start_range and dest_start_range and add the diff to the seed
-// if the seed value exists within the range.
 fn map_entities(seed: i64, map_str: &str) -> i64 {
     let mut range = map_str.split("\r\n").collect::<Vec<&str>>();
     range.remove(0);
